@@ -7,5 +7,5 @@ The aim of the script is to illustrate the difference between estimating **undir
 The script generates activity for 4 configurations of a network of 4 nodes, which differ by the connectivity *C* and the input covariance matrix *Σ* (left of the plotted figure). The observables (mean activity *X* and covariance matrices *Q0* and *Q1*) are in the center of the figure. The network estimates for partial correlation (PC) and the MOU estimation ('est') are located on the right of the figure.
 
 Refs:
-en.wikipedia.org/wiki/Partial_correlation
-en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process
+- en.wikipedia.org/wiki/Partial_correlation
+- en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process
