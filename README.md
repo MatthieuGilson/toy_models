@@ -7,3 +7,11 @@ The script in python3 generates activity using multivariate Ornstein-Uhelnbeck (
 Refs:
 - en.wikipedia.org/wiki/Partial_correlation
 - en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process
+
+
+# MVAR_Granger_detection.py
+
+This script compares the efficiency of conditional Granger causality analysis and a novel non-parametric testing method for MVAR in a network with linear feedback in discrete time (same as MVAR, which is canonical to both estimation methods). It examines the true-detection rates and false-alarm rates for network with random size, density, etc.
+
+Ref:
+- Gilson, Tauste Campo, Chen, Thiele, Deco (2017) Net Neurosci doi.org/10.1162/NETN_a_00019
