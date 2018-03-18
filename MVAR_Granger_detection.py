@@ -137,11 +137,11 @@ FP_C_GRc_param = np.zeros([n_pval]) # false-alarm rates for several p-values
 detect_C_GRc_param = np.zeros([N,N],dtype=np.bool) # matrices of detected connections
 
 # estimate ratios
-err_full = np.linalg.lstsq(t_X[:-1,:],t_X[1:,:],rcond=None)[1]                
+err_full = np.linalg.lstsq(t_X[:-1,:],t_X[1:,:])[1]                
 for j in range(N):
     v_bool = np.ones([N],dtype=np.bool)
     v_bool[j] = False
-    err_noj = np.linalg.lstsq(t_X[:-1,v_bool],t_X[1:,:],rcond=None)[1]
+    err_noj = np.linalg.lstsq(t_X[:-1,v_bool],t_X[1:,:])[1]
     C_GRc[:,j] = np.log(err_noj/err_full)
 
 # calculate false alarm rate
