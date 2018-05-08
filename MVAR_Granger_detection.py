@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 25 16:44:50 2018
+@author: matgilson
+
+This script compares the efficiency of conditional Granger causality analysis and a novel 
+non-parametric testing method for MVAR in a network with linear feedback in discrete time 
+(same as MVAR, which is canonical to both estimation methods). It examines the true-detection 
+rates and false-alarm rates for network with random size, density, etc.
+
+Ref:
+- Gilson, Tauste Campo, Chen, Thiele, Deco (2017) Net Neurosci doi.org/10.1162/NETN_a_00019
+"""
+
 import sys, os
 import numpy as np
 import scipy.stats as stt
