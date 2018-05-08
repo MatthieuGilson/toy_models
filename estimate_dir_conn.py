@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Tue May  8 22:12:10 2018
+
+@author: gilsonmatthieu
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Thu Jan 25 16:44:50 2018
 
 @author: matgilson
@@ -31,7 +39,6 @@ import matplotlib.pyplot as pp
 
 work_dir = './'
 
-graph_format = 'eps'
 
 # network and simulation parameters
 
@@ -58,12 +65,12 @@ n_sampl = int(1./dt) # sampling to get 1 point every second
 nTs = int(T) # number of simulated time points after subsampling
 
 
-# original network configurations
+# original network configurations, where C[i,j] is the weight from node j to node i
 
-# 1 C sym and Sigma homogeneous
-# 2 C sym and Sigma heterogeneous
-# 3 C sym and Sigma heterogeneous
-# 4 same as 3 with non-Gaussian noise
+# 1 C symmetric and Sigma homogeneous
+# 2 C symmetric and Sigma heterogeneous
+# 3 C directed and Sigma heterogeneous
+# 4 same as 3 with non-Gaussian observation noise
 
 # config 3
 C[2,1,0] = 1
@@ -242,7 +249,7 @@ for i_net in range(n_net):
     pp.yticks(np.arange(N),np.arange(N)+1,fontsize=8)
 
 
-pp.savefig(work_dir+'fig_est_th.'+graph_format,format=graph_format)
+pp.savefig(work_dir+'fig_est_th')
 pp.close()
 
 
@@ -255,5 +262,5 @@ pp.yticks(fontsize=8)
 pp.xlabel('noise values',fontsize=8)
 pp.ylabel('probability density',fontsize=8)
 pp.title('noise distribution (config 4)',fontsize=8)
-pp.savefig(work_dir+'distr_noise.'+graph_format,format=graph_format)
+pp.savefig(work_dir+'distr_noise')
 pp.close()
