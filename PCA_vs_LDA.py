@@ -5,7 +5,7 @@ Created on Mon Feb  5 23:04:11 2018
 
 @author: gilsonmatthieu
 
-This script shows how principal component analysis (PCA) and linear discriminant analysis (LDA) describe the data samples. Here 2 models:
+This script shows how principal component analysis (PCA) and linear discriminant analysis (LDA) describe the data samples. Here we have 2 models of samples:
     - 4 groups of samples in 2+ dimensions differ by their means along the 1st dimension (the variance is common to all groups, but is dimension-specific);
     - 4 groups of samples in 3 dimensions forming a tetrahedron.
 Check the performance (as measured by the silhouette values) of the unsupervised PCA and the supervised LDA depending on the variance scaling (e.g., swap the values for the scaling factors). Try also with more dimensions, etc.
@@ -27,15 +27,15 @@ n = 30 # number of samples per class
 # properties of groups: play with variance scaling
 m_gp = np.zeros([c,d]) # means
 std_gp = np.ones([c,d]) # standard deviation
-if False: # configuration 1 with d = 2
+if True: # configuration 1 with d >= 2
     m_gp[:,0] = np.linspace(0,1,c) # difference in mean between groups along 1st dimension
     std_gp[:,0] *= 0.2 # along 1st dimension
-    std_gp[:,1:] *= 1.5 # along 1st dimension
+    std_gp[:,1:] *= 1.5 # along 2nd dimension (and higher if there are)
 else: # configuration 2 with d = 3
     m_gp[:,0] = np.array([0,0,1,1])
     m_gp[:,1] = np.array([0,1,1,0])
     m_gp[:,2] = np.array([0,1,0,1])
-    std_gp[:,1:] *= 0.3 # along 2nd dimension
+    std_gp[:,1:] *= 0.3 # along 2nd and 3rd dimensions
 
 # samples in d dimensions and labels
 x = np.zeros([n*c,d])
